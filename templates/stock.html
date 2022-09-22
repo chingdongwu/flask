@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>股市首頁</title>
+    <style>
+        #container {
+            background-color: bisque;
+            width: 80%;
+            text-align: center;
+            margin: 0px auto;
+        }
+
+        li {
+            list-style: none;
+            background-color: rgb(235, 158, 196);
+            text-align: center;
+            color: white;
+            display: inline-block;
+            padding: 6px;
+            margin: 6px;
+            border-radius: 6px;
+            font-size: 30px;
+            width: 250px;
+        }
+    </style>
+</head>
+
+<body id="container">
+
+    <h1 style="text-align:center;">{{name}}您好，以下為亞股市場資訊</h1>
+    {{date}}
+    <ul>
+        {% for i in stocks %}
+        <li>{{i.分類}} {{i.指數}}</li>
+        {%endfor%}
+    </ul>
+    <a href="/">回首頁</a>
+</body>
+
+</html>

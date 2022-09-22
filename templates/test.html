@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>多功能連結窗口</title>
+    <style>
+        #date {
+            background-color: black;
+            color: aliceblue;
+            display: inline-block;
+            padding: 12px;
+            font-size: 24px;
+            border-radius: 6px;
+        }
+
+        #container {
+            width: 80%;
+            text-align: left;
+            margin: 0px auto;
+        }
+
+        a {
+            font-size: 24px;
+        }
+    </style>
+</head>
+
+<body id="container" onload="getTime()">
+    <h1>HELLO,{{name}}</h1>
+    <p id="date">{{now}}</p>
+    <br>
+    <a href="./stock">亞股市場資訊</a>
+    <script>
+        const timeEl = document.querySelector('#date')
+        function getTime() {
+            let date = new Date()
+            timeEl.innerText = `${date.getFullYear()}-${date.getMonth() + 1}\
+            ${date.getDate()} ${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`;
+            setTimeout(getTime, 1000);
+        }
+
+    </script>
+</body>
+
+</html>
