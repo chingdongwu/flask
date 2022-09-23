@@ -29,16 +29,17 @@
     </style>
 </head>
 
-<body id="container">
+<body id="container" onload="getTime()">
 
-    <h1 style="text-align:center;">{{name}}您好，以下為亞股市場資訊</h1>
-    {{date}}
+    <h1 style="text-align:center;">亞股市場資訊</h1>
+    <div id="date">{{date}}</div>
     <ul>
         {% for i in stocks %}
-        <li>{{i.分類}} {{i.指數}}</li>
+        <li>{{i[0]}} {{i[1]}}</li>
         {%endfor%}
     </ul>
     <a href="/">回首頁</a>
+    <script src="{{url_for('static',filename='./js/main.js')}}"></script>
 </body>
 
 </html>
