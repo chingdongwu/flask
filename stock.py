@@ -15,7 +15,7 @@ def get_stocks():
     xpath = '/html/body/div[1]/div/div/div/div/div[5]/div[1]/div[1]/div/div[1]/div/div[1]/div/div/div[1]/div[2]/div/div[2]/button'
     element = chrome.find_element(by=By.XPATH, value=xpath)
     element.click()
-    soup = BeautifulSoup(chrome.page_source, 'lxml')
+    soup = BeautifulSoup(chrome.page_source, 'html.parser')
     lis = soup.find('ul', class_="P(0) M(0)").find_all('li')
     datas = []
     for li in lis:
