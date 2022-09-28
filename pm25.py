@@ -46,5 +46,4 @@ def get_county_pm25(county):
 
 
 if __name__ == '__main__':
-
     print(get_pm25(True))
